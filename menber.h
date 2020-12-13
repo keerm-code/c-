@@ -10,7 +10,7 @@
 #include"facility.h"
 #include"house.h"
 #include"service.h"
-#include"ui.hpp"
+//#include"ui.hpp"
 
 using namespace std;
 class Member
