@@ -13,22 +13,25 @@
 #include"ui.hpp"
 
 using namespace std;
-class menber
+class Member
 {
 private:
     string name;
     vector<House> estates;
-            
+    Facility facilitytaken;
+
     /* data */
 public:
-    menber(/* args */);
-    ~menber();
+    Member(/* args */);
+    ~Member();
 };
 
-menber::menber(/* args */)
+Member::Member(/* args */)
 {
 }
 
-menber::~menber()
+Member::~Member()
 {
 }
+
+typedef vector<Member> MemberList;
