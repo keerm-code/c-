@@ -15,7 +15,7 @@ private:
 public:
     Servicer(/* args */);
     ~Servicer();
-    vector<string> object;
+    vector<int> object;
 };
 
 Servicer::Servicer(/* args */)
@@ -40,5 +40,6 @@ void AddNewServicer(ServList &list)
 
 void FireServicer(ServList &list,int servicernum)
 {
-    
+
 }
+
