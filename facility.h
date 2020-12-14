@@ -10,23 +10,63 @@
 
 #include<iostream>
 #include<string>
+#include<fstream>
+
+using namespace std;
 
 struct Facility
 {
+    int id;
     std::string name;
     bool istaken;
     std::string occupier;
     Facility* next;
 };
 
-void InitFacility(Facility* start)
+void AddFacility(Facility *start)
 {
+    Facility *tempf=(Facility*)malloc(sizeof(Facility));
+    while (1)
+    {
+        if(start->next!=NULL)
+        {
+            start=start->next;
+        }
+        else
+        {
+            std::cout<<"请输入设施名称:";
+            std::cin>>tempf->name;
+            std::cout<<"请输入设施编号:";
+            std::cin>>tempf->id;
+            tempf->istaken=false;
+            tempf->occupier="none";
+            start->next=tempf;
+            break;
+        }
+    }
     
 }
 
-void AddFacility(Facility *start)
+bool InitFacility(Facility* start)
 {
 
+    fstream fp;
+    fp.open("Facility.txt",ios_base::in);
+    if(!fp)
+    {
+        printf("数据文件不存在\n");
+        return false;
+    }
+    string temps;
+    Facility *tempf,*endf;
+    start=endf;
+    for (size_t i = 0;fp.peek()!=EOF; i++)
+    {
+        tempf=(Facility*)malloc(sizeof(Facility));
+        getline(fp,temps);
+        tempf->name=temps.substr(0,temps.find(' '));
+        //tempf->occupier
+    }
 }
 
 bool DeleteFacility(Facility *start,int num)

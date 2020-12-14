@@ -15,7 +15,7 @@
 ----------作者----------
     ：              ：
 **/
-#include<stdio.h>
+//#include<stdio.h>
 #include<iostream>
 #include<vector>
 #include<array>
@@ -72,7 +72,7 @@ bool initbuslist(Buslist &list)
     {
         string temps;//tempstring
         Bus tempbus;
-        for(int i=0;fp.peek()==EOF;i++)
+        for(int i=0;fp.peek()!=EOF;i++)
         {
             getline(fp,temps);
             tempbus.num=i;
