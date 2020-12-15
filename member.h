@@ -6,6 +6,8 @@
 3.写函数实现会员的添加删除修改
 4.写函数，让会员能买卖房屋，占用/解除占用设施，选择服务人员,入住房屋等；
 **/
+
+//占用解除占用设施，选择服务人员，房屋入住。
 #include"bus.h"
 #include"facility.h"
 #include"house.h"
@@ -24,6 +26,7 @@ private:
 public:
     Member(/* args */);
     ~Member();
+    int Access_facility(Facility*head);
 };
 
 Member::Member(/* args */)
@@ -35,3 +38,22 @@ Member::~Member()
 }
 
 typedef vector<Member> MemberList;
+
+int Member::Access_facility(Facility*head)
+{
+    Facility *current = head;
+    while(1)
+    {
+        if(current->istaken == 1)
+        {
+            current = current->next;
+        }
+        else
+        {
+            current->istaken = 1;
+            current->occupier = name;
+            facilitytaken = current->id;
+            break;
+        }
+    }
+}
