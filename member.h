@@ -52,7 +52,7 @@ int Member::Access_facility(Facility*head)
         {
             current->istaken = 1;
             current->occupier = name;
-            facilitytaken = *curren
+            facilitytaken = current->id;
             break;
         }
     }
