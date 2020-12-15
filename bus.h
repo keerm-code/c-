@@ -35,6 +35,8 @@ class Bus
         //方法
         //!0是起始站，1是终点站
         string take(int startorend);
+        Bus();
+        ~Bus();
 };
 
 Bus::Bus()

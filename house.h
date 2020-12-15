@@ -12,10 +12,12 @@ struct House
     int loc;
     std::string owner; 
     bool isused; 
-	int printf_house(HouseList house_list);
 };
 
 typedef std::vector<House> HouseList;
+
+int printf_house(HouseList house_list);
+
 
 bool InitHouse(HouseList list)
 {

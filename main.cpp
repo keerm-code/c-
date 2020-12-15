@@ -20,7 +20,7 @@ int main()
         exit(-1);
     }
 
-    bool b;
+    
     Facility *facility=(Facility*)malloc(sizeof(Facility));
     b=InitFacility(facility);
     if(!b)
@@ -29,7 +29,7 @@ int main()
         exit(-1);
     }
 
-    bool b;
+
     MemberList memberlist;
     b=initmember(memberlist);
     if(!b)
@@ -38,7 +38,7 @@ int main()
         exit(-1);
     }
 
-    bool b;
+    
     ServList servlist;
     b=InitServList(servlist);
     if(!b)
@@ -47,7 +47,7 @@ int main()
         exit(-1);
     }
 
-    bool b;
+    //bool b;
     HouseList houselist;
     b=InitHouse(houselist);
     if(!b)
@@ -56,9 +56,9 @@ int main()
         exit(-1);
     }
     int choose;
-    printf("*****欢迎来到夕阳红老年社区管理系统*****\n");
+    cout<<"*****夕阳红老年社区管理系统*****\n";
     printf("1.管理系统\n");
-    printf("2.用户系统\n");\
+    printf("2.用户系统\n");
     printf("0.退出\n");
     printf("*************************************\n");
     printf("请输入选项前的数字进行选择:\n");
@@ -84,6 +84,7 @@ int main()
         cin>>temps;
         Member newm(temps,-1,-1);
         memberlist.push_back(newm);
+        membersave(memberlist);
     }
     if(z==2)
     {
@@ -91,6 +92,7 @@ int main()
         printf("请输入要删除的会员编号");
         scanf("%d",&tempn);
         memberlist.erase(memberlist.begin()+tempn);
+        membersave(memberlist);
     }
     if(z==3)
     AddFacility(facility);
@@ -122,10 +124,13 @@ int main()
     int c;
     if(c==1)
     memberlist[x].BuyHouse(houselist);
+    membersave(memberlist);
     if(c==2)
     memberlist[x].Access_facility(facility);
+    membersave(memberlist);
     if(c==3)
     memberlist[x].Service_personnel(servlist);
+    membersave(memberlist);
     if(c==4)
     printbuslist(buslist);
     if(c==0)

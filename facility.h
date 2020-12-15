@@ -64,7 +64,10 @@ bool InitFacility(Facility* start)
     for (size_t i = 0;fp.peek()!=EOF; i++)
     {
         tempf=(Facility*)malloc(sizeof(Facility));
-        fp>>tempf->id>>tempf->name>>tempf->occupier>>tempf->istaken;
+        fp>>tempf->id>>tempf->name;
+        fp>>temps;
+        tempf->occupier=temps;
+        fp>>tempf->istaken;
         //tempf->occupier
     }
     return true;
@@ -92,6 +95,6 @@ void PrintFacilityList(Facility *start)
 {
     if(start->next!=__null)
     {
-        printf("%d %8s  %8s %d",start->id,start->name,start->occupier,start->istaken);
+        printf("%d %8s  %8s %d",start->id,start->name.c_str(),start->occupier.c_str(),start->istaken);
     }
 }
