@@ -41,6 +41,7 @@ void AddFacility(Facility *start)
             tempf->istaken=false;
             tempf->occupier="none";
             start->next=tempf;
+            tempf->next=nullptr;
             break;
         }
     }

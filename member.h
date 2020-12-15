@@ -17,7 +17,7 @@ class Member
 {
 private:
     string name;
-    vector<House> estates;
+    House estates;
     Facility facilitytaken;
 
     /* data */
