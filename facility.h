@@ -71,14 +71,26 @@ bool InitFacility(Facility* start)
 
 bool DeleteFacility(Facility *start,int num)
 {
-
-    if(start->id!=num)
+    bool isfind=false;
+    if(start->next->id!=num)
     {
-        
+        start=start->next;
     }
+    else
+    {
+        Facility* current=(Facility*)malloc(sizeof(Facility));
+        current=start->next->next;
+        free(start->next);
+        start->next=current;
+        isfind=true;
+    }
+    return isfind;
 }
 
 void PrintFacilityList(Facility *start)
 {
-
+    if(start->next!=__null)
+    {
+         
+    }
 }

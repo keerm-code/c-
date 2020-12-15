@@ -12,6 +12,7 @@
 #include"facility.h"
 #include"house.h"
 #include"service.h"
+#include<algorithm>
 //#include"ui.hpp"
 
 using namespace std;
@@ -24,6 +25,7 @@ private:
 
     /* data */
 public:
+    bool BuyHouse(HouseList List);
     Member(/* args */);
     ~Member();
     int Access_facility(Facility*head);
@@ -37,6 +39,20 @@ Member::Member(/* args */)
 
 Member::~Member()
 {
+}
+
+bool Member::BuyHouse(HouseList List)
+{
+    for (size_t i = 0; i < List.size(); i++)
+    {
+        if(List[i].isused==0)
+        {       
+            break;
+        }
+        
+    }
+    
+
 }
 
 typedef vector<Member> MemberList;
