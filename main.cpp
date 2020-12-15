@@ -86,7 +86,12 @@ int main()
 
     }
     if(z==2)
-    memberlist.erase(member);
+    {
+        int tempn;
+        printf("请输入要删除的会员编号");
+        scanf("%d",&tempn);
+        memberlist.erase(memberlist.begin()+tempn);
+    }
     if(z==3)
     AddFacility(facility);
     if(z==4)
