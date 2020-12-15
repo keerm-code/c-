@@ -20,7 +20,7 @@ class Member
 private:
     string name;
     House estates;
-    Facility facilitytaken;
+    int facilitytaken;
 
     /* data */
 public:
