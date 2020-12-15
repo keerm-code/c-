@@ -28,7 +28,7 @@ public:
     ~Member();
     int Access_facility(Facility*head);
     int num;
-    int Service_personnel(ServList list,int n);
+    int Service_personnel(ServList list);
 };
 
 Member::Member(/* args */)
@@ -60,7 +60,7 @@ int Member::Access_facility(Facility*head)
     }
 }
 
-int Service_personnel(ServList list)
+int Member::Service_personnel(ServList list)
 
 {
     int i = 0;
