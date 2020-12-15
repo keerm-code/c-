@@ -89,3 +89,11 @@ bool initbuslist(Buslist &list)
     fp.close();
     return true;
 }
+
+void printbuslist(Buslist list)
+{
+    for (size_t i = 0; i < sizeof(list); i++)
+    {
+        cout<<list[i].num<<"\t"<<list[i].station[0]<<"\t"<<list[i].station[1]<<endl;
+    }
+}

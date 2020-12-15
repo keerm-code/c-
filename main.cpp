@@ -14,7 +14,7 @@ int main()
     bool b;
     Buslist buslist;
     b=initbuslist(buslist);
-    if(!initbuslist)
+    if(!b)
     {
         printf("数据库损坏，无法初始化\n");
         exit(-1);
@@ -23,7 +23,7 @@ int main()
     bool b;
     Facility *facility=(Facility*)malloc(sizeof(Facility));
     b=InitFacility(facility);
-    if(!InitFacility)
+    if(!b)
     {
         printf("数据库损坏，无法初始化\n");
         exit(-1);
@@ -31,8 +31,8 @@ int main()
 
     bool b;
     MemberList memberlist;
-    b=initbuslist(buslist);
-    if(!initbuslist)
+    b=initmember(memberlist);
+    if(!b)
     {
         printf("数据库损坏，无法初始化\n");
         exit(-1);
@@ -41,7 +41,7 @@ int main()
     bool b;
     ServList servlist;
     b=InitServList(servlist);
-    if(!InitServList)
+    if(!b)
     {
         printf("数据库损坏，无法初始化\n");
         exit(-1);
@@ -50,7 +50,7 @@ int main()
     bool b;
     HouseList houselist;
     b=InitHouse(houselist);
-    if(!InitHouse)
+    if(!b)
     {
         printf("数据库损坏，无法初始化\n");
         exit(-1);
@@ -127,7 +127,7 @@ int main()
     if(c==3)
     memberlist[x].Service_personnel(servlist);
     if(c==4)
-
+    printbuslist(buslist);
     if(c==0)
     exit(-1);
     
