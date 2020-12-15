@@ -67,6 +67,7 @@ bool InitFacility(Facility* start)
         fp>>tempf->id>>tempf->name>>tempf->occupier>>tempf->istaken;
         //tempf->occupier
     }
+    return true;
 }
 
 bool DeleteFacility(Facility *start,int num)
@@ -91,6 +92,6 @@ void PrintFacilityList(Facility *start)
 {
     if(start->next!=__null)
     {
-         
+        printf("%d %8s  %8s %d",start->id,start->name,start->occupier,start->istaken);
     }
 }

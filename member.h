@@ -6,7 +6,7 @@
 3.写函数实现会员的添加删除修改
 4.写函数，让会员能买卖房屋，占用/解除占用设施，选择服务人员,入住房屋等；
 **/
-
+//  TODO：从文件读取会员信息，添加/删除会员，查询会员,打印会员列表
 //占用解除占用设施，选择服务人员，房屋入住。
 #include"bus.h"
 #include"facility.h"
@@ -20,7 +20,7 @@ class Member
 {
 private:
     string name;
-    House estates;
+    int houseloc;
     int facilitytaken;
 
     /* data */
@@ -31,6 +31,7 @@ public:
     int Access_facility(Facility*head);
     int num;
     int Service_personnel(ServList list);
+    int Check_in (HouseList list_house);
 };
 
 Member::Member(/* args */)
@@ -48,7 +49,7 @@ bool Member::BuyHouse(HouseList List)
         if(List[i].isused==0)
         {   
             
-            estates=List[i];
+            houseloc=List[i].loc;
             List[i].owner=name;
             x++;  
             return true;  
@@ -98,8 +99,29 @@ int Member::Service_personnel(ServList list)
         else
         {
             list[i].object = num;
+            break;
         }
         
     }
 
 }
+
+int Check_in (HouseList list_house)
+
+{
+    int count = 0;
+    while (1)
+    {
+        if (list_house[count].loc != count)
+        {
+             count++;
+        }
+        else
+        {
+            list_house[count].isused = 1;
+            break;
+        }
+    }
+}
+
+

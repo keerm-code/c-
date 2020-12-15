@@ -67,3 +67,13 @@ bool FireServicer(ServList &list,int servicernum)
     return true;
 }
 
+int printf_servicer(ServList list_service)
+{
+    int count_2 = 0;
+    for(count_2 = 0;count_2 < list_service.size();count_2++)
+    {
+        printf("%d\t%d\n",count_2,list_service[count_2].object);
+    }
+
+}
+
