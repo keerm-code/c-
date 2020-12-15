@@ -20,7 +20,7 @@ class Member
 {
 private:
     string name;
-    House estates;
+    int houseloc;
     int facilitytaken;
 
     /* data */
