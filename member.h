@@ -19,9 +19,10 @@ using namespace std;
 class Member
 {
 private:
+    string name;
     int houseloc;
     int facilitytaken;
-    string name;
+
     /* data */
 public:
     bool BuyHouse(HouseList List);
@@ -33,11 +34,6 @@ public:
     int Service_personnel(ServList list);
     int Check_in (HouseList list_house);
 };
-
-Member::Member()
-{
-    
-}
 
 Member::Member(string n_name,int n_loc,int n_f/* args */)
 {
@@ -59,6 +55,7 @@ bool Member::BuyHouse(HouseList List)
             
             houseloc=List[i].loc;
             List[i].owner=name;
+            printf("您已购买了%d号房",List[i].loc);
             x++;  
             return true;  
         }
