@@ -97,3 +97,14 @@ void printbuslist(Buslist list)
         cout<<list[i].num<<"\t"<<list[i].station[0]<<"\t"<<list[i].station[1]<<endl;
     }
 }
+
+void savebus(Buslist list)
+{
+    fstream fp;
+    fp.open("bus.txt");
+    for (size_t i = 0; i < sizeof(list); i++)
+    {
+        fp<<list[i].num<<"\t"<<list[i].station[0]<<"\t"<<list[i].station[1]<<endl;
+    }
+    fp.close();
+}

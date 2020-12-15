@@ -118,14 +118,13 @@ int Member::Service_personnel(ServList list)
 }
 
 int Check_in (HouseList list_house)
-
 {
     int count = 0;
     while (1)
     {
         if (list_house[count].loc != count)
         {
-             count++;
+            count++;
         }
         else
         {
