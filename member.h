@@ -19,14 +19,13 @@ using namespace std;
 class Member
 {
 private:
-    string name;
     int houseloc;
     int facilitytaken;
-
+    string name;
     /* data */
 public:
     bool BuyHouse(HouseList List);
-    Member(/* args */);
+    Member(string n_name,int n_loc,int n_f/* args */);
     ~Member();
     int Access_facility(Facility*head);
     int num;
@@ -34,8 +33,11 @@ public:
     int Check_in (HouseList list_house);
 };
 
-Member::Member(/* args */)
+Member::Member(string n_name,int n_loc,int n_f/* args */)
 {
+    name=n_name;
+    houseloc=n_loc;
+    facilitytaken=n_f;
 }
 
 Member::~Member()

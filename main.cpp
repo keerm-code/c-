@@ -77,7 +77,14 @@ int main()
     int z;
     scanf("%d",&z);
     if(z==1)
-    memberlist.push_back(member);
+    {
+        string temps;
+        printf("请依次输入会员名：");
+        cin>>temps;
+        Member newm(temps,-1,-1);
+        memberlist.push_back(newm);
+
+    }
     if(z==2)
     memberlist.erase(member);
     if(z==3)
