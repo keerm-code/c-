@@ -54,7 +54,6 @@ bool Member::BuyHouse(HouseList List)
 }
 
 typedef vector<Member> MemberList;
-typedef vector<Member> MemberList;
 
 int Member::Access_facility(Facility*head)
 {
