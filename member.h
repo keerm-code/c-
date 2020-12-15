@@ -29,6 +29,8 @@ public:
     Member(/* args */);
     ~Member();
     int Access_facility(Facility*head);
+    int num;
+    int Service_personnel(ServList list);
 };
 
 Member::Member(/* args */)
@@ -40,15 +42,24 @@ Member::~Member()
 }
 
 bool Member::BuyHouse(HouseList List)
-{
+{      int x=0;
     for (size_t i = 0; i < List.size(); i++)
     {
         if(List[i].isused==0)
-        {       
-            break;
+        {   
+            
+            estates=List[i];
+            List[i].owner=name;
+            x++;  
+            return true;  
         }
         
-    }
+    }   if(x==0)
+        {
+            printf("没有空房了。");
+            return false;
+        }   
+
     
 
 }
@@ -72,4 +83,23 @@ int Member::Access_facility(Facility*head)
             break;
         }
     }
+}
+
+int Member::Service_personnel(ServList list)
+
+{
+    int i = 0;
+    while (1)
+    {
+        if(list[i].object != -1)
+        {
+            i++;
+        }
+        else
+        {
+            list[i].object = num;
+        }
+        
+    }
+
 }
