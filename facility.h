@@ -64,7 +64,7 @@ bool InitFacility(Facility* start)
     for (size_t i = 0;fp.peek()!=EOF; i++)
     {
         tempf=(Facility*)malloc(sizeof(Facility));
-        fp>>tempf->id>>tempf->name>>tempf->occupier>>tempf
+        fp>>tempf->id>>tempf->name>>tempf->occupier>>tempf->istaken;
         //tempf->occupier
     }
 }
