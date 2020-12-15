@@ -1,13 +1,14 @@
 #include"member.h"
 int num;
 int servicernum;
-bool BuyHouse(HouseList List);
-int Access_facility(Facility*head);
-int Service_personnel(ServList list);
-void AddFacility(Facility *start);
-bool DeleteFacility(Facility *start,int num);
-void AddNewServicer(ServList &list);
-bool FireServicer(ServList &list,int servicernum);
+//bool BuyHouse(HouseList List);
+//int Access_facility(Facility*head);
+//int Service_personnel(ServList list);
+//void AddFacility(Facility *start);
+//bool DeleteFacility(Facility *start,int num);
+//void AddNewServicer(ServList &list);
+//bool FireServicer(ServList &list,int servicernum);
+//bool initmember(MemberList list);
 int main()
 {
     bool b;
@@ -106,17 +107,25 @@ int main()
     
     case 2:
     printf("***************用户系统***************\n");
+    printf("请输入会员编号\n");
+    int x;
+    scanf("%d",&x);
+    if(x>=sizeof(memberlist))
+    {
+        printf("用户不存在\n");
+        exit(-1);
+    }
     printf("1.购房\n");
     printf("2.选择设施\n");
     printf("3.选择服务\n");
-    printf("4.班车时间表\n");
+    printf("4.班车表\n");
     int c;
     if(c==1)
-    BuyHouse(houselist);
+    memberlist[x].BuyHouse(houselist);
     if(c==2)
-    Access_facility(facility);
+    memberlist[x].Access_facility(facility);
     if(c==3)
-    Service_personnel(servlist);
+    memberlist[x].Service_personnel(servlist);
     if(c==4)
 
     if(c==0)
