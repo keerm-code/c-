@@ -19,9 +19,7 @@ using namespace std;
 class Member
 {
 private:
-    string name;
-    int houseloc;
-    int facilitytaken;
+
 
     /* data */
 public:
@@ -33,6 +31,9 @@ public:
     int num;
     int Service_personnel(ServList list);
     int Check_in (HouseList list_house);
+    string name;
+    int houseloc;
+    int facilitytaken;
 };
 
 Member::Member(string n_name,int n_loc,int n_f/* args */)
@@ -147,9 +148,23 @@ bool initmember(MemberList list)
     int nloc,nf;
     while(fp.peek()!=EOF)
     {
+        int i=0;
         fp>>n_name>>nloc>>nf;
+        tempm.num=i;
+        i++;
         tempm=Member(n_name,nloc,nf);
         list.push_back(tempm);
     }
     return true;
+}
+
+bool membersave(MemberList list)
+{
+    fstream fp;
+    fp.open("member.txt");
+    for(int i=0;i<sizeof(list);i++)
+    {
+        fp<<list[i].name<<list[i].houseloc<<list[i].facilitytaken;
+    }
+    fp.close();
 }
