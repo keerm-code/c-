@@ -26,12 +26,18 @@ private:
 public:
     bool BuyHouse(HouseList List);
     Member(string n_name,int n_loc,int n_f/* args */);
+    Member::Member();
     ~Member();
     int Access_facility(Facility*head);
     int num;
     int Service_personnel(ServList list);
     int Check_in (HouseList list_house);
 };
+
+Member::Member()
+{
+    
+}
 
 Member::Member(string n_name,int n_loc,int n_f/* args */)
 {
