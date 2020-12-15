@@ -40,15 +40,24 @@ Member::~Member()
 }
 
 bool Member::BuyHouse(HouseList List)
-{
+{      int x=0;
     for (size_t i = 0; i < List.size(); i++)
     {
         if(List[i].isused==0)
-        {       
-            break;
+        {   
+            
+            estates=List[i];
+            List[i].owner=name;
+            x++;  
+            return true;  
         }
         
-    }
+    }   if(x==0)
+        {
+            printf("没有空房了。");
+            return false;
+        }   
+
     
 
 }
