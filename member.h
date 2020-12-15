@@ -29,6 +29,8 @@ public:
     Member(/* args */);
     ~Member();
     int Access_facility(Facility*head);
+    int num;
+    int Service_personnel(ServList list);
 };
 
 Member::Member(/* args */)
@@ -81,4 +83,23 @@ int Member::Access_facility(Facility*head)
             break;
         }
     }
+}
+
+int Member::Service_personnel(ServList list)
+
+{
+    int i = 0;
+    while (1)
+    {
+        if(list[i].object != -1)
+        {
+            i++;
+        }
+        else
+        {
+            list[i].object = num;
+        }
+        
+    }
+
 }
