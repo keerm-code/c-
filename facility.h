@@ -64,8 +64,7 @@ bool InitFacility(Facility* start)
     for (size_t i = 0;fp.peek()!=EOF; i++)
     {
         tempf=(Facility*)malloc(sizeof(Facility));
-        getline(fp,temps);
-        tempf->name=temps.substr(0,temps.find(' '));
+        fp>>tempf->id>>tempf->name>>tempf->occupier>>tempf
         //tempf->occupier
     }
 }
@@ -73,6 +72,10 @@ bool InitFacility(Facility* start)
 bool DeleteFacility(Facility *start,int num)
 {
 
+    if(start->id!=num)
+    {
+        
+    }
 }
 
 void PrintFacilityList(Facility *start)
