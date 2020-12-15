@@ -20,6 +20,7 @@
 #include<vector>
 #include<array>
 #include<fstream>
+#include<string>
 
 using namespace std;
 
@@ -74,6 +75,7 @@ bool initbuslist(Buslist &list)
         Bus tempbus;
         for(int i=0;fp.peek()!=EOF;i++)
         {
+            
             getline(fp,temps);
             tempbus.num=i;
             tempbus.isrun=true;
