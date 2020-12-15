@@ -48,7 +48,7 @@ bool Member::BuyHouse(HouseList List)
         if(List[i].isused==0)
         {   
             
-            estates=List[i];
+            houseloc=List[i].loc;
             List[i].owner=name;
             x++;  
             return true;  
