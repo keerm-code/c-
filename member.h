@@ -10,6 +10,7 @@
 #include"facility.h"
 #include"house.h"
 #include"service.h"
+#include<algorithm>
 //#include"ui.hpp"
 
 using namespace std;
@@ -17,11 +18,12 @@ class Member
 {
 private:
     string name;
-    House estates;
+    House house;
     Facility facilitytaken;
 
     /* data */
 public:
+    bool BuyHouse(HouseList List);
     Member(/* args */);
     ~Member();
 };
@@ -32,6 +34,20 @@ Member::Member(/* args */)
 
 Member::~Member()
 {
+}
+
+bool Member::BuyHouse(HouseList List)
+{
+    for (size_t i = 0; i < List.size(); i++)
+    {
+        if(List[i].isused==0)
+        {       
+            break;
+        }
+        
+    }
+    
+
 }
 
 typedef vector<Member> MemberList;
