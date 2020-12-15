@@ -27,7 +27,7 @@ private:
 public:
     bool BuyHouse(HouseList List);
     Member(string n_name,int n_loc,int n_f/* args */);
-    Member::Member();
+    Member();
     ~Member();
     int Access_facility(Facility*head);
     int num;
@@ -40,6 +40,11 @@ Member::Member(string n_name,int n_loc,int n_f/* args */)
     name=n_name;
     houseloc=n_loc;
     facilitytaken=n_f;
+}
+
+Member::Member()
+{
+
 }
 
 Member::~Member()
@@ -129,4 +134,22 @@ int Check_in (HouseList list_house)
     }
 }
 
-
+bool initmember(MemberList list)
+{
+    fstream fp;
+    fp.open("member.txt");
+    if(!fp)
+    {
+        return false;
+    }
+    Member tempm;
+    string n_name;
+    int nloc,nf;
+    while(fp.peek()!=EOF)
+    {
+        fp>>n_name>>nloc>>nf;
+        tempm=Member(n_name,nloc,nf);
+        list.push_back(tempm);
+    }
+    return true;
+}
