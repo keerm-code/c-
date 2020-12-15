@@ -83,7 +83,6 @@ int main()
         cin>>temps;
         Member newm(temps,-1,-1);
         memberlist.push_back(newm);
-
     }
     if(z==2)
     {
